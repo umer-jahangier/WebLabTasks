@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cookies Manager</title>
+</head>
+<body>
+    <%- include('header') %>
+    <h1>Cookies Manager</h1>
+    <form action="/cookies-manager" method="POST">
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Cookie Name</th>
+                <th>Cookie Value</th>
+                <th>Actions</th>
+            </tr>
+            <% for (const [name, value] of Object.entries(cookies)) { %>
+                <tr>
+                    <td><input type="text" name="names[]" value="<%= name %>" /></td>
+                    <td><input type="text" name="values[]" value="<%= value %>" /></td>
+                    <td>
+                        <button formaction="/remove-cookie" formmethod="POST" name="delete" value="<%= name %>">Remove</button>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+        <button type="submit">Update Cookies</button>
+    </form>
+</body>
+</html>

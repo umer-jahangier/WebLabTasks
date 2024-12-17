@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= user ? 'Update' : 'Add' %> User</title>
+</head>
+<body>
+    <%- include('header') %>
+    <h1><%= user ? 'Update' : 'Add' %> User</h1>
+    <form action="/save-user" method="POST">
+        <input type="hidden" name="id" value="<%= user ? user.id : '' %>">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="<%= user ? user.name : '' %>" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="<%= user ? user.email : '' %>" required>
+        </div>
+        <button type="submit"><%= user ? 'Update' : 'Add' %> User</button>
+    </form>
+</body>
+</html>

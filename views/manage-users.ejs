@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage Users</title>
+</head>
+<body>
+    <%- include('header') %>
+    <h1>Manage Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <a href="/add-update-user?id=<%= user.id %>">Update</a>
+                        <form action="/delete-user" method="POST" style="display:inline;">
+                            <input type="hidden" name="id" value="<%= user.id %>">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/add-update-user">Add New User</a>
+</body>
+</html>

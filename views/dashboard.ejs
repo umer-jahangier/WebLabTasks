@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Dashboard</title>
+</head>
+<body>
+    <%- include('header') %>
+    <h1>Book Dashboard</h1>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Publisher</th>
+            <th>Cover</th>
+            <th>Actions</th>
+        </tr>
+        <% books.forEach((book, index) => { %>
+            <tr>
+                <td><%= book.title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.year %></td>
+                <td><%= book.publisher %></td>
+                <td>
+                    <% if (book.coverPath) { %>
+                        <img src="<%= book.coverPath %>" alt="Cover" width="50" />
+                    <% } %>
+                </td>
+                <td>
+                    <a href="/update-book?id=<%= index %>">Update</a> |
+                    <a href="#" onclick="deleteBook(<%= index %>)">Remove</a>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+    <script>
+        function deleteBook(index) {
+            fetch(`/delete-book?id=${index}`, { method: 'DELETE' })
+                .then(() => window.location.reload());
+        }
+    </script>
+    <a href="/add-book">Add New Book</a>
+</body>
+</html>

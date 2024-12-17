@@ -1,0 +1,14 @@
+<hr />
+<footer>
+    <h4>Recently Visited Pages</h4>
+    <ul>
+        <% visitedPages.forEach((page, index) => { %>
+            <li>
+                <a href="<%= page.url %>"><%= page.name %></a>
+            </li>
+        <% }); %>
+    </ul>
+    <!-- Add Remove All link -->
+    <a href="/clear-pages">Remove All</a>
+    <h4> Powered by <a href="https://www.dotlabs.online">DotLabs</a></h4>
+</footer>

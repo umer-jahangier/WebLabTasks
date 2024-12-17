@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Information</title>
+</head>
+<body>
+    <%- include('header') %>
+    <h1>Book Information</h1>
+    <p>Title: <%= book.title %></p>
+    <p>Author: <%= book.author %></p>
+    <p>Year: <%= book.year %></p>
+    <p>Publisher: <%= book.publisher %></p>
+    <% if (book.coverPath) { %>
+        <img src="<%= book.coverPath %>" alt="Book Cover" width="200" />
+    <% } %>
+</body>
+</html>
