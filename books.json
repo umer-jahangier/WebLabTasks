@@ -5,5 +5,82 @@
     "year": "2024",
     "publisher": "Charlie",
     "coverPath": "/images/Shehryar.jpg"
+  },
+  {
+    "title": "alpha",
+    "author": "beta",
+    "year": "charlie",
+    "publisher": "gamma",
+    "coverPath": null
+  },
+  {
+    "title": "Alpha",
+    "author": "Beta",
+    "year": "charlie",
+    "publisher": "gamma",
+    "coverPath": "/images/islamic-arabic-calligraphy-la-hawla-wala-quwwata-illa-billah-vector.jpg"
+  },
+  {
+    "title": "Alpha",
+    "author": "Beta",
+    "year": "charlie",
+    "publisher": "gamma",
+    "coverPath": "/images/islamic-arabic-calligraphy-la-hawla-wala-quwwata-illa-billah-vector.jpg"
+  },
+  {
+    "title": "Alpha",
+    "author": "Beta",
+    "year": "charlie",
+    "publisher": "gamma",
+    "coverPath": "/images/islamic-arabic-calligraphy-la-hawla-wala-quwwata-illa-billah-vector.jpg"
+  },
+  {
+    "title": "alpha",
+    "author": "beta",
+    "year": "charlie",
+    "publisher": "gamam",
+    "coverPath": null
+  },
+  {
+    "title": "alpha",
+    "author": "beta",
+    "year": "charlie",
+    "publisher": "gamam",
+    "coverPath": null
+  },
+  {
+    "title": "a",
+    "author": "b",
+    "year": "c",
+    "publisher": "d",
+    "coverPath": null
+  },
+  {
+    "title": "a",
+    "author": "b",
+    "year": "c",
+    "publisher": "d",
+    "coverPath": null
+  },
+  {
+    "title": "a",
+    "author": "b",
+    "year": "c",
+    "publisher": "d",
+    "coverPath": null
+  },
+  {
+    "title": "a",
+    "author": "b",
+    "year": "c",
+    "publisher": "d",
+    "coverPath": null
+  },
+  {
+    "title": "a",
+    "author": "b",
+    "year": "c",
+    "publisher": "d",
+    "coverPath": null
   }
 ]

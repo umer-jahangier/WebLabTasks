@@ -21,11 +21,13 @@
                 <td><%= book.author %></td>
                 <td><%= book.year %></td>
                 <td><%= book.publisher %></td>
-                <td>
+                
                     <% if (book.coverPath) { %>
+                    <td>
                         <img src="<%= book.coverPath %>" alt="Cover" width="50" />
+                    </td>
                     <% } %>
-                </td>
+                
                 <td>
                     <a href="/update-book?id=<%= index %>">Update</a> |
                     <a href="#" onclick="deleteBook(<%= index %>)">Remove</a>

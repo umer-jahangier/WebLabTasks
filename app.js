@@ -47,17 +47,22 @@ app.get('/home', (req, res) => {
 
 // Query handlers
 app.get('/queryhandler', (req, res) => {
-    console.log(req.query);
+    console.log(req.query.name);
     res.send('Query parameters logged on the server console.');
 });
 
-app.get('/queryhandler2', (req, res) => {
-    res.render('show', { params: req.query });
-});
 
 // Add book form and handler
 app.get('/add-book', (req, res) => {
     res.render('add-book');
+});
+
+app.get('/show-book-info', (req, res) => {
+    let filePath = "./books.json";
+    if (fs.existsSync(filePath)) {
+        let books = JSON.parse(fs.readFileSync(filePath));
+        res.render('show-book-info', {book: books[0] });
+    }
 });
 
 app.post('/add-book', (req, res) => {
@@ -77,7 +82,7 @@ app.post('/add-book', (req, res) => {
     books.push(book);
     fs.writeFileSync('books.json', JSON.stringify(books, null, 2));
 
-    res.render('show-book-info', { book });
+    res.render('/show-book-info', { book });
 });
 
 // Dashboard to list books
@@ -100,7 +105,7 @@ app.get('/cookie1', (req, res) => {
     res.cookie('token', 'sample_token');
 
     const secondsElapsed = lastVisit ? (currentTime - lastVisit) / 1000 : 0;
-    res.render('cookie1', { secondsElapsed });
+    res.redirect('/show-cookies');
 });
 
 app.get('/add-cookie', (req, res) => {
@@ -131,9 +136,10 @@ app.get('/show-cookies', (req, res) => {
 
 // Remove cookie
 app.post('/remove-cookie', (req, res) => {
-    const { name } = req.body;
+    const name = req.body.delete;
+    console.log(`Cookie removed: ${name}`);
     res.clearCookie(name);
-    res.redirect('/home');
+    res.redirect('/show-cookies');
 });
 
 // AJAX remove cookie handler

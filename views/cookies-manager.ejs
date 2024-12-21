@@ -6,7 +6,7 @@
 <body>
     <%- include('header') %>
     <h1>Cookies Manager</h1>
-    <form action="/cookies-manager" method="POST">
+    <form action="/show-cookies" method="GET">
         <table border="1" cellpadding="10">
             <tr>
                 <th>Cookie Name</th>
@@ -15,15 +15,14 @@
             </tr>
             <% for (const [name, value] of Object.entries(cookies)) { %>
                 <tr>
-                    <td><input type="text" name="names[]" value="<%= name %>" /></td>
-                    <td><input type="text" name="values[]" value="<%= value %>" /></td>
+                    <td><input type="text" name="cookie-name" value="<%= name %>" /></td>
+                    <td><input type="text" name="cookie-value" value="<%= value %>" /></td>
                     <td>
                         <button formaction="/remove-cookie" formmethod="POST" name="delete" value="<%= name %>">Remove</button>
                     </td>
                 </tr>
             <% } %>
         </table>
-        <button type="submit">Update Cookies</button>
     </form>
 </body>
 </html>
